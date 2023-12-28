@@ -16,7 +16,7 @@
 Before evaluation, please download the MME benchmark files [MME](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation) into mme_bench directory. <br>
 Then run the cmd: <br>
 
-**`sh eval_mme.sh`**
+**`sh eval/eval_mme.sh`**
 
 # MME Benchmark
 QQMM achieved xxx points, which was topx on MME benchmark at 2023-12-28.

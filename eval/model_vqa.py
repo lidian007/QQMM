@@ -12,6 +12,7 @@ import math
 import logging
 import warnings
 from transformers import AutoTokenizer, AutoConfig, BitsAndBytesConfig
+from ..model import *
 
 
 
@@ -62,7 +63,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
 
         tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=False)
         print('Loading QQMM from base model_zoo...')
-        model = QQMMlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained,
+        model = QQMMLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained,
                                                       **kwargs)
         token_num, tokem_dim = model.lm_head.out_features, model.lm_head.in_features
         if model.lm_head.weight.shape[0] != token_num:
